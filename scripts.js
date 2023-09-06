@@ -69,3 +69,15 @@ settingsForm.addEventListener('submit', (event) => {
    values from the CSS 'object--root--'
  */
 
+if (selected.theme === 'dark') {
+    document.documentElement.style.setProperty('--color-light', css.dark[0]);
+    document.documentElement.style.setProperty('--color-dark', css.dark[1]);
+} else if (selected.theme === 'light') {
+    document.documentElement.style.setProperty('--color-light', css.light[0]);
+    document.documentElement.style.setProperty('--color-dark', css.light[1]);
+}
+
+// Use 'let' for pages to allow it to change further in the code
+let page = 1;
+
+
