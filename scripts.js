@@ -1,5 +1,14 @@
 /* Import varables from data.js file */
-import {BOOKS_PER_PAGE, authors, genres, books } from "./data.js";
+import {BOOKS_PER_PAGE, authors, genres, books } from "./data";
+
+/* Access elements from the DOM with document.querySelector */
+const searchButton = document.querySelector('[data-header-search]')
+const settingsButton = document.querySelector('[data-header-settings]')
+const settingsOverlay = document.querySelector('[data-settings-overlay]')
+const settingsForm = document.querySelector('[data-settings-form]')
+const settingsTheme = document.querySelector('[data-settings-theme]')
+const settingsCancel = documetn.querySelector('[daya-settings-cancel]')
+
 
 matches = books
 page = 1;
