@@ -134,3 +134,11 @@ for (let i = 0; i < extracted.length; i++) {
 
 const bookList1 = document.querySelector('[data-list-items]');
 bookList1.appendChild(preview);
+
+
+// Create search button with data stored in 'data-header-search = imported from data.js
+const searchButton1 = document.querySelector("[data-header-search]");
+searchButton1.addEventListener('click', () => {
+    document.querySelector("[data-search-overlay]").style.display = "block";
+});
+
