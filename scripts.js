@@ -21,6 +21,38 @@ settingsCancel.addEventListener('click', ()=> {
 })
 
 // Theme for dark/light mode
+const css = {
+    light: ['255, 255, 255', '10, 10, 20'],
+    dark: ['10, 10, 20', '255, 255, 255']
+};
+
+/*  This line checks whether the user's preferred color scheme is dark by using
+    the window.matchMedia method. It creates a media query that checks if the
+    preferred color scheme is dark. The result of this check is stored in the
+    prefersDarkMode variable as a boolean value (true if the user prefers dark
+    mode, false otherwise). 
+*/
+// Determine the preferred color scheme (e.g., dark or light)
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Select root element in the <html> of the HTML document
+const root =document.documentElement;
+
+// Set the CSS custom properties based on the preferred color scheme
+if (prefersDarkMode) {
+    root.style.setProperty('--color-dark', `rgb(${css.dark[0]})`);
+    root.style.setProperty('--color-light', `rgb(${css.dark[1]})`);
+} else {
+    root.style.setProperty('--color-dark', `rgb(${css.light[0]})`);
+    root.style.setProperty('--color-light', `rgb(${css.light[1]})`);
+}
+
+/* The value of settingsTheme input is determined based on whether the user's
+   preferred theme is dark or light
+*/
+settingsTheme.value = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
+
+
 
 fragment = document.createDocumentFragment()
 const extracted = books.slice(0, 36)
