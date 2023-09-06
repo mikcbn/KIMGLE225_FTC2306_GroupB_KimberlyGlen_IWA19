@@ -159,7 +159,12 @@ cancelSettings.addEventListener('click', () => {
     document.querySelector("[data-settings-overlay]").style.display = "none";
 });
 
-
 // Create a variable to import specific data from HTML
 const selectAuthor = document.querySelector("[data-search-authors]");
 const selectGenre = document.querySelector("[data-search-genres]");
+
+// 'Object.entries()' is used to iterate over the authors and genres in an arrow fucntion 
+Object.entries(authors).forEach(([authorId, authorName]) => {
+    const optionElement = createOptionalElement(authorId, authorName);
+    authorSelect.appendChild(optionElement);
+});
