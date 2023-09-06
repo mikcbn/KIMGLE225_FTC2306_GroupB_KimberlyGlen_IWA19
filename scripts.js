@@ -168,3 +168,8 @@ Object.entries(authors).forEach(([authorId, authorName]) => {
     const optionElement = createOptionalElement(authorId, authorName);
     authorSelect.appendChild(optionElement);
 });
+
+Object.entries(genres).forEach(([genreId, genreName]) => {
+    const optionElement = createOptionalElement(genreId, genreName);
+    genreSelect.appendChild(optionElement); // Append the option to the genreSelect element
+});
