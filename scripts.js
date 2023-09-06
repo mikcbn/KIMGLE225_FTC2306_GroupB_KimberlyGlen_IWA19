@@ -7,7 +7,7 @@ const settingsButton = document.querySelector('[data-header-settings]')
 const settingsOverlay = document.querySelector('[data-settings-overlay]')
 const settingsForm = document.querySelector('[data-settings-form]')
 const settingsTheme = document.querySelector('[data-settings-theme]')
-const settingsCancel = documetn.querySelector('[daya-settings-cancel]')
+const settingsCancel = document.querySelector('[daya-settings-cancel]')
 
 /* Dark and light mode */
 // Event listener for clicking on theme
@@ -15,16 +15,12 @@ settingsTheme.addEventListener('click', ()=> {
     overlay.showModal();
 })
 
+// Event listener for clicking cancel
+settingsCancel.addEventListener('click', ()=> {
+    overlay.showModal();
+})
 
-day = {
-    dark: '10, 10, 20',
-    light: '255, 255, 255',
-}
-
-night = {
-    dark: '255, 255, 255',
-    light: '10, 10, 20',
-}
+// Theme for dark/light mode
 
 fragment = document.createDocumentFragment()
 const extracted = books.slice(0, 36)
