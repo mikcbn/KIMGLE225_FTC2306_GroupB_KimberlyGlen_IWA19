@@ -200,3 +200,9 @@ const detailsToggle = (event) => {
     if (event.dataset.image) image.setAttribute('src', event.dataset.image);
     if (event.dataset.imageblur) imageblur.setAttribute('src', event.dataset.image);
 }
+
+// Click function to close the 'details'
+const closeDetals = document.querySelector('[data-list-close')
+closeDetals.addEventListener('click', () => {
+document.querySelector("[data-list-active]").style.display = "none";
+});
