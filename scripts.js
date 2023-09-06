@@ -9,12 +9,12 @@ const settingsForm = document.querySelector('[data-settings-form]')
 const settingsTheme = document.querySelector('[data-settings-theme]')
 const settingsCancel = documetn.querySelector('[daya-settings-cancel]')
 
+/* Dark and light mode */
+// Event listener for clicking on theme
+settingsTheme.addEventListener('click', ()=> {
+    overlay.showModal();
+})
 
-matches = books
-page = 1;
-
-if (!books && !Array.isArray(books)) throw new Error('Source required') 
-if (!range && range.length < 2) throw new Error('Range must be an array with two numbers')
 
 day = {
     dark: '10, 10, 20',
