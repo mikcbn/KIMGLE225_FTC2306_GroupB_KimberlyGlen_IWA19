@@ -158,3 +158,8 @@ const cancelSettings = document.querySelector("[data-settings-cancel]");
 cancelSettings.addEventListener('click', () => {
     document.querySelector("[data-settings-overlay]").style.display = "none";
 });
+
+
+// Create a variable to import specific data from HTML
+const selectAuthor = document.querySelector("[data-search-authors]");
+const selectGenre = document.querySelector("[data-search-genres]");
