@@ -86,3 +86,51 @@ let page = 1;
 */
 if (!books && !Array.isArray(books)) {throw new Error('Source Required')};
 if (!page && page.length < 2) {throw new Error('Page must be an array with two numbers')};
+
+const fragment = document.createDocumentFragment()
+
+let start = 0; // The index at which to begin extraction (inclusive).
+let end = 36; // The index at which to end extraction (exclusive).
+
+/* Extract elements from the books array starting at index 0 (inclusive) and
+ending at index 36 (exclusive). i.e. extract elements from index 0 up to, but
+not including, index 36.
+
+This code extracts a subarray from the books array, starting from index 0 and
+ending just before index 36, and stores the extracted elements in the extracted
+array. The extracted portion of the array will have a length of 36 elements (if
+there are enough elements in the books array). 
+ */
+const extracted = books.slice(start, end) 
+
+// 'for' loop to view books-imported data from data.js
+for (let i = 0; i < extracted.length; i++) {
+    const preview = document.createElement('dl');
+    preview.className = 'preview';
+
+    preview.dataset.id = extracted[i].id;
+    preview.dataset.title = extracted[i].title;
+    preview.dataset.image = extracted[i].image;
+    preview.dataset.subtitle = `${authors[extracted[i].author]} (${(new Date(extracted[i].published)).getFullYear()})`;
+    preview.dataset.description = extracted[i].description;
+    preview.dataset.genre = extracted[i].genres;
+
+    // Append 'preview' to the document or a parent element as needed
+    document.body.appendChild(preview);
+
+    preview.innerHTML = `
+        <div>
+            <img class='preview__image' src="${extracted[i].image}" alt="book pic">
+        </div>
+        <div class='preview__info'>
+            <dt class='preview__title'>${extracted[i].title}</dt>
+            <dt class='preview__author'>By ${authors[extracted[i].author]}</dt>
+        </div>
+    `;
+
+    // Append 'preview' to the document or a parent element as needed
+    document.body.appendChild(preview);
+}
+
+const bookList1 = document.querySelector('[data-list-items]');
+bookList1.appendChild(preview);
