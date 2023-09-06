@@ -202,7 +202,46 @@ const detailsToggle = (event) => {
 }
 
 // Click function to close the 'details'
-const closeDetals = document.querySelector('[data-list-close')
+const closeDetals = document.querySelector('[data-list-close]')
 closeDetals.addEventListener('click', () => {
-document.querySelector("[data-list-active]").style.display = "none";
+    document.querySelector("[data-list-active]").style.display = "none";
 });
+
+// Add event listener to click on specific data-list
+const bookSelect = document.querySelector('[data-list-items]')
+bookSelect.addEventListener('click', detailsToggle)
+
+
+// Variable to show more books when selecting 'show me more'
+const showMoreButton = document.querySelector('[data-list-button]');
+
+// Variable to display the books when clicking the 'show-me-more' button
+const maxItemsToDisplay = Math.min(books.length - end); 
+const showMoreButtonText = `Show More (${maxItemsToDisplay})`; // Use backticks for template literal
+
+showMoreButton.textContent = showMoreButtonText;
+
+// Add an event listener to click the 'more button' and display more books
+showMoreButton.addEventListener('click', () => {
+    const fragment = document.createDocumentFragment();
+    start += 36;
+    end += 36;
+    const start1 = start;
+    const end1 = end;
+    console.log(start1);
+    console.log(end1);
+    const extracted = books.slice(start1, end1);
+});
+
+/* Create 'for' loop to continue displaying all books, images, title, id,
+description & published in object imported from data.js
+*/
+for (const {author, image, title, id, description, published} of extracted) {
+    const preview = document.createElement('dl')
+    preview.className = 'preview'
+    preview.dataset.id = id
+    preview.dataset.title = title
+    preview.dataset.image = image
+    preview.dataset.subtitle = '${authors[author]} (${(new Date(published)).getFullYear()})'
+    preview.dataset.description = description
+}
