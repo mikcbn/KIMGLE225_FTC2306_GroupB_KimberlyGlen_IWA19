@@ -1,3 +1,6 @@
+/* Import varables from data.js file */
+import {BOOKS_PER_PAGE, authors, genres, books } from "./data.js";
+
 matches = books
 page = 1;
 
