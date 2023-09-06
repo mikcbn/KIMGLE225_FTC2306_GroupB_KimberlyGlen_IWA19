@@ -80,4 +80,9 @@ if (selected.theme === 'dark') {
 // Use 'let' for pages to allow it to change further in the code
 let page = 1;
 
-
+/* Check if variable 'books' is not defined or is not an array and throws an
+   error message if true, this check ensures that the books variable exists and
+   is an array before proceeding with the code.
+*/
+if (!books && !Array.isArray(books)) {throw new Error('Source Required')};
+if (!page && page.length < 2) {throw new Error('Page must be an array with two numbers')};
