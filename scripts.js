@@ -173,3 +173,30 @@ Object.entries(genres).forEach(([genreId, genreName]) => {
     const optionElement = createOptionalElement(genreId, genreName);
     genreSelect.appendChild(optionElement); // Append the option to the genreSelect element
 });
+
+// A function with parameters to create an option element
+function createOptionElement(value, text) {
+    const optionElement = document.createElement('option');
+    optionElement.value = value;
+    optionElement.textContent = text;
+    return optionElement;
+}
+
+// Create event function for details to display
+const detailsToggle = (event) => {
+    // Create the variables to call 'data-key' in HTML
+    const overlay = document.querySelector('[data-list-active]');
+    const title = document.querySelector('[data-list-title]');
+    const subtitle = document.querySelector('[data-list-subtitle]');
+    const description = document.querySelector('[data-list-description]');
+    const image = document.querySelector('[data-list-image]');
+    const imageblur = document.querySelector('[data-list-blur]');
+
+    // Use the event object to access dataset properties
+    if (event.dataset.id) overlay.style.display = "block";
+    if (event.dataset.title) title.innerHTML = event.dataset.title;
+    if (event.dataset.subtitle) subtitle.innerHTML = event.dataset.subtitle;
+    if (event.dataset.description) description.innerHTML = event.dataset.description;
+    if (event.dataset.image) image.setAttribute('src', event.dataset.image);
+    if (event.dataset.imageblur) imageblur.setAttribute('src', event.dataset.image);
+}
