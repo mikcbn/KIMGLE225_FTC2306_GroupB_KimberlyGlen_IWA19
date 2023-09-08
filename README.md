@@ -68,3 +68,7 @@ This project uses the following sources:
     Main Guideline: https://chat.openai.com
     Book data: data.js
     HTML and JavaScript: Developed by Kimberly Glen
+
+Live presentation of functionality:
+https://www.loom.com/share/1b006f20f2934bb08c5f17152f44b1a4?sid=2707983d-44e1-486b-bdff-c01aa07f8292
+

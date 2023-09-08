@@ -17,7 +17,7 @@ const SELECTORS = {
 const CLASSES = {
   preview: 'preview',
   bookList: 'book-list', // Example class for the book list container
- settingsButton: 'settings-button', // Class for settings button
+  settingsButton: 'settings-button', // Class for settings button
   settingsOverlay: 'settings-overlay', // Class for settings overlay
   searchButton: 'search-button', // Class for search button
   searchOverlay: 'search-overlay', // Class for search overlay
@@ -193,12 +193,12 @@ function displayBookPreview(book) {
   const image = document.querySelector('[data-list-image]');
   const imageBlur = document.querySelector('[data-list-blur]');
 
-  if (book.id) overlay.style.display = 'block';
-  if (book.title) title.innerHTML = book.title;
-  if (book.subtitle) subtitle.innerHTML = book.subtitle;
-  if (book.description) description.innerHTML = book.description;
-  if (book.image) image.setAttribute('src', book.image);
-  if (book.imageblur) imageBlur.setAttribute('src', book.image);
+  overlay.style.display = 'block';
+  title.innerHTML = book.title || '';
+  subtitle.innerHTML = book.subtitle || '';
+  description.innerHTML = book.description || '';
+  image.setAttribute('src', book.image || '');
+  imageBlur.setAttribute('src', book.image || '');
 }
 
 // Event listener to close details overlay
