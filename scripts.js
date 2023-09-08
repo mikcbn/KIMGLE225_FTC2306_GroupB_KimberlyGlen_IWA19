@@ -17,8 +17,30 @@ const SELECTORS = {
 const CLASSES = {
   preview: 'preview',
   bookList: 'book-list', // Example class for the book list container
-  // Add your other class names here
+ settingsButton: 'settings-button', // Class for settings button
+  settingsOverlay: 'settings-overlay', // Class for settings overlay
+  searchButton: 'search-button', // Class for search button
+  searchOverlay: 'search-overlay', // Class for search overlay
+  bookSummary: 'book-summary', // Class for book summary
+  genreSelect: 'genre-select', // Class for genre dropdown
+  authorSelect: 'author-select', // Class for author dropdown
+  showMoreButton: 'show-more-button', // Class for "Show More" button
+  detailsOverlay: 'details-overlay', // Class for book details overlay
+  settingsForm: 'settings-form', // Class for settings form
+  themeSelect: 'theme-select', // Class for theme selection in settings
+  cancelButton: 'cancel-button', // Class for cancel button in settings
+  searchInput: 'search-input', // Class for search input field
+  bookImage: 'book-image', // Class for book image
+  closeDetailsButton: 'close-details-button', // Class for close button in book details
+  listItems: 'list-items', // Class for the list of book previews
+  listActive: 'list-active', // Class for active book details container
+  listTitle: 'list-title', // Class for book title in details
+  listSubtitle: 'list-subtitle', // Class for book subtitle in details
+  listDescription: 'list-description', // Class for book description in details
+  listImage: 'list-image', // Class for book image in details
+  listBlur: 'list-blur', // Class for blurred book image in details
 };
+
 
 // Retrieve elements from the DOM using query selectors
 const settingsButton = document.querySelector(SELECTORS.settingsButton);
