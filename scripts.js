@@ -17,8 +17,8 @@ const SELECTORS = {
 const CLASSES = {
   preview: 'preview',
   bookList: 'book-list', // Example class for the book list container
-  settingsButton: 'settings-button', // Class for settings button
-  settingsOverlay: 'settings-overlay', // Class for settings overlay
+  settingButton: 'settings-button', // Class for settings button
+  settingOverlay: 'settings-overlay', // Class for settings overlay
   searchButton: 'search-button', // Class for search button
   searchOverlay: 'search-overlay', // Class for search overlay
   bookSummary: 'book-summary', // Class for book summary
@@ -43,15 +43,14 @@ const CLASSES = {
 
 
 // Retrieve elements from the DOM using query selectors
-const settingsButton = document.querySelector(SELECTORS.settingsButton);
+const settingButton = document.querySelector(SELECTORS.settingsButton);
 const settingsOverlay = document.querySelector(SELECTORS.settingsOverlay);
 const settingsForm = document.querySelector(SELECTORS.settingsForm);
 const settingsTheme = document.querySelector(SELECTORS.settingsTheme);
-const settingsCancel = document.querySelector(SELECTORS.settingsCancel);
+const settingCancel = document.querySelector(SELECTORS.settingsCancel);
 const searchButton = document.querySelector(SELECTORS.searchButton);
 const searchOverlay = document.querySelector(SELECTORS.searchOverlay);
 const bookPreviews = document.querySelector(SELECTORS.bookPreviews);
-const bookSummary = document.querySelector(SELECTORS.bookSummary);
 
 // Define CSS themes
 const themes = {
@@ -78,18 +77,20 @@ settingsForm.addEventListener('submit', (event) => {
 // Event listener to open the search overlay
 searchButton.addEventListener('click', () => {
   searchOverlay.style.display = 'block';
+  console.log("Search button clicked")
 });
 
 // Event listener to close the search overlay
 const searchCancel = document.querySelector("[data-search-cancel]");
 searchCancel.addEventListener('click', () => {
   searchOverlay.style.display = 'none';
+  console.log("search cancel clicked")
 });
 
 // Event listener to open the settings overlay
-const settingButton = document.querySelector("[data-header-settings]");
 settingButton.addEventListener('click', () => {
   settingsOverlay.style.display = 'block';
+  console.log("settingButton clicked")
 });
 
 // Get the select elements by their data attributes
@@ -97,10 +98,11 @@ const genreSelect = document.querySelector('[data-search-genres]');
 const authorSelect = document.querySelector('[data-search-authors]');
 
 // Event listener to close the settings overlay
-const settingCancel = document.querySelector('[data-settings-cancel]');
 settingCancel.addEventListener('click', () => {
   settingsOverlay.style.display = 'none';
+  console.log("setting cancel clicked")
 });
+
 
 // Populate author and genre dropdowns
 // Add the "any" option as the first option
@@ -205,6 +207,7 @@ function displayBookPreview(book) {
 const detailsClose = document.querySelector('[data-list-close]');
 detailsClose.addEventListener('click', () => {
   document.querySelector("[data-list-active]").style.display = "none";
+  console.log("details close clicked")
 });
 
 // Show more books
